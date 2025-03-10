@@ -7,17 +7,17 @@ export default defineConfig({
   plugins: [
     react(),
     dts({
-      insertTypesEntry: true,
+      rollupTypes: true,
+      tsconfigPath: path.resolve(__dirname, "tsconfig.app.json"),
     }),
   ],
   build: {
-    outDir: "dist",
     emptyOutDir: true,
-    sourcemap: true,
     lib: {
       entry: path.resolve(__dirname, "src/index.ts"),
       name: "@diaazzawi/react-auth",
-      formats: ["es"],
+      formats: ["es", "umd"],
+      fileName: (format) => `react-auth.${format}.js`,
     },
     rollupOptions: {
       external: ["react", "react-dom"],

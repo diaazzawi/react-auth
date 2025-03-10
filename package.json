@@ -1,7 +1,6 @@
 {
   "name": "@diaazzawi/react-auth",
-  "version": "1.0.0",
-  "type": "module",
+  "version": "1.0.1",
   "description": "Authentication Library for React, which makes Token based auth very easy",
   "keywords": [
     "react",
@@ -17,26 +16,26 @@
     "type": "git",
     "url": "git+https://github.com/diaazzawi/react-auth.git"
   },
-  "module": "dist/react-auth.js",
+  "publishConfig": {
+    "access": "public"
+  },
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
-  "directories": {
-    "src": "src",
-    "lib": "dist",
-    "test": "__tests__"
-  },
-  "files": ["dist/", "src/"],
-  "exports": {
-    "./package.json": "./package.json",
-    ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/react-auth.mjs",
-      "default": "./dist/index.js"
-    }
+  "module": "dist/react-auth.esm.js",
+  "unpkg": "dist/react-auth.umd.min.js",
+  "files": [
+    "dist/**/*.js",
+    "dist/**/*.js.map",
+    "dist/**/*.d.ts",
+    "dist/**/package.json",
+    "src/"
+  ],
+  "sideEffects": false,
+  "bugs": {
+    "url": "https://github.com/diaazzawi/react-auth/issues"
   },
   "scripts": {
-    "clean": "rimraf dist",
-    "build": "yarn clean && tsc -b && vite build",
+    "build": "tsc -b && vite build",
     "format": "biome format",
     "format:write": "biome format --write --unsafe",
     "lint": "biome lint",
