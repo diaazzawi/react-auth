@@ -1,6 +1,5 @@
 {
   "name": "@diaazzawi/react-auth",
-  "private": true,
   "version": "1.0.0",
   "type": "module",
   "description": "Authentication Library for React, which makes Token based auth very easy",
@@ -14,6 +13,10 @@
   ],
   "author": "Dia Azzawi <dia.azzawi@gmail.com>",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/diaazzawi/react-auth.git"
+  },
   "module": "dist/react-auth.js",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -30,10 +33,6 @@
       "import": "./dist/react-auth.mjs",
       "default": "./dist/index.js"
     }
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/diaazzawi/react-auth.git"
   },
   "scripts": {
     "clean": "rimraf dist",
