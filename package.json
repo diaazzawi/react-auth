@@ -14,39 +14,37 @@
   ],
   "author": "Dia Azzawi <dia.azzawi@gmail.com>",
   "license": "MIT",
-  "source": "src/index.ts",
-  "main": "index.js",
-  "module": "index.js",
-  "types": "index.d.ts",
+  "module": "dist/react-auth.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "directories": {
     "src": "src",
     "lib": "dist",
     "test": "__tests__"
   },
-  "files": ["hooks", "utils", "dist", "*.js", "*.d.ts"],
+  "files": ["dist/", "src/"],
   "exports": {
-    ".": "./dist/index.js",
-    "./errors": "./dist/errors.js",
-    "./AuthContext": "./dist/AuthContext.js",
-    "./createStore": "./dist/createStore.js",
-    "./AuthProvider": "./dist/AuthProvider.js",
-    "./createRefresh": "./dist/createRefresh.js",
-    "./hooks/*": "./dist/hooks/*.js",
-    "./utils/*": "./dist/utils/*.js",
-    "./route": "./dist/route/index.js"
+    "./package.json": "./package.json",
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/react-auth.mjs",
+      "default": "./dist/index.js"
+    }
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/diaazzawi/react-auth.git"
   },
   "scripts": {
-    "build": "tsc -b && vite build",
+    "clean": "rimraf dist",
+    "build": "yarn clean && tsc -b && vite build",
     "format": "biome format",
     "format:write": "biome format --write --unsafe",
     "lint": "biome lint",
     "lint:write": "biome lint --write --unsafe",
     "check": "biome check",
-    "check:write": "biome check --write --unsafe"
+    "check:write": "biome check --write --unsafe",
+    "prepack": "yarn build"
   },
   "dependencies": {
     "deep-equal": "^2.2.3",
@@ -63,6 +61,7 @@
     "@vitejs/plugin-react": "^4.3.4",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "rimraf": "^6.0.1",
     "typescript": "^5.7.3",
     "vite": "^6.2.0",
     "vite-plugin-dts": "^4.5.3"
