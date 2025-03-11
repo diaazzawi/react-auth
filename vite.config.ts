@@ -1,26 +1,31 @@
 import react from "@vitejs/plugin-react";
-import path from "node:path";
+import {resolve} from "node:path";
 import {defineConfig} from "vite";
 import dts from "vite-plugin-dts";
+import {version} from "./package.json";
 
 export default defineConfig({
-  plugins: [
-    react(),
-    dts({
-      rollupTypes: true,
-      tsconfigPath: path.resolve(__dirname, "tsconfig.app.json"),
-    }),
-  ],
+  define: {
+    VERSION: JSON.stringify(version),
+  },
+  plugins: [react(), dts()],
   build: {
-    emptyOutDir: true,
+    outDir: "dist",
+    emptyOutDir: false,
+    minify: "terser",
+    sourcemap: false,
     lib: {
-      entry: path.resolve(__dirname, "src/index.ts"),
+      entry: resolve(__dirname, "src/index.ts"),
       name: "@diaazzawi/react-auth",
       formats: ["es", "umd"],
-      fileName: (format) => `react-auth.${format}.js`,
+      fileName: (format) => `index.${format}.js`,
     },
     rollupOptions: {
-      external: ["react", "react-dom"],
+      external: ["react", "react-dom", "src/utils/*"],
+      input: {
+        // Ensure proper structure for subfolders
+        main: resolve(__dirname, "src/index.ts"),
+      },
       output: {
         globals: {
           react: "React",

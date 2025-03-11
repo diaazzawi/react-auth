@@ -83,7 +83,9 @@ import {doSignIn} from "../utils/reducers";
  * that in the parameter, else it throws AuthError.
  *
  */
-function useSignIn<T>(): (signInConfig: signInFunctionParams<T>) => boolean {
+const useSignIn = <T>(): ((
+  signInConfig: signInFunctionParams<T>,
+) => boolean) => {
   const context = useReactAuthKit();
   const router = useReactAuthKitRouter();
   const navigate = router?.useNavigate();
@@ -147,6 +149,6 @@ function useSignIn<T>(): (signInConfig: signInFunctionParams<T>) => boolean {
       return true;
     }
   };
-}
+};
 
 export default useSignIn;

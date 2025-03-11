@@ -36,7 +36,7 @@ import {doSignOut} from "../utils/reducers";
  * ```
  *
  */
-function useIsAuthenticated(): () => boolean {
+const useIsAuthenticated = (): (() => boolean) => {
   const {value, set} = useReactAuthKit();
   const router = useReactAuthKitRouter();
   const {fallbackPath} = useReactAuthKitConfig();
@@ -58,6 +58,6 @@ function useIsAuthenticated(): () => boolean {
     }
     return false;
   };
-}
+};
 
 export default useIsAuthenticated;
