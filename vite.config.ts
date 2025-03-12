@@ -12,8 +12,8 @@ export default defineConfig({
   build: {
     outDir: "dist",
     emptyOutDir: false,
-    minify: "terser",
-    sourcemap: false,
+    target: "es2015", // This necessary so that es output files get minified
+    minify: true, // Minify the output
     lib: {
       entry: resolve(__dirname, "src/index.ts"),
       name: "@diaazzawi/react-auth",
