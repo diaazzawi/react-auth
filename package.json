@@ -24,9 +24,7 @@
   "module": "dist/index.es.js",
   "unpkg": "dist/react-auth.umd.min.js",
   "types": "dist/index.d.ts",
-  "files": [
-    "dist"
-  ],
+  "files": ["dist", "README.md", "LICENSE"],
   "sideEffects": false,
   "bugs": {
     "url": "https://github.com/diaazzawi/react-auth/issues"
@@ -62,7 +60,5 @@
     "vite": "^6.2.0",
     "vite-plugin-dts": "^4.5.3"
   },
-  "trustedDependencies": [
-    "@biomejs/biome"
-  ]
+  "trustedDependencies": ["@biomejs/biome"]
 }
