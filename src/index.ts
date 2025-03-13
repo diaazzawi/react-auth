@@ -21,6 +21,7 @@ export * from "./hooks";
 export type {
   AuthKitStateInterface,
   AuthKitStateInterfaceAuthToken,
+  Router,
   SignInActionPayload,
   signInFunctionParams,
 } from "./types";

@@ -1,6 +1,6 @@
 {
   "name": "@diaazzawi/react-auth",
-  "version": "1.0.3",
+  "version": "1.0.5",
   "private": false,
   "description": "Authentication Library for React, which makes Token based auth very easy",
   "keywords": [

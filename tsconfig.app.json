@@ -49,7 +49,6 @@
       "*": ["*"]
       // "@diaazzawi/react-auth": ["src/index.ts"], // @remap-prod-remove-line
       // "@diaazzawi/react-auth/hooks": ["src/hooks/index.ts"], // @remap-prod-remove-line
-      // "@diaazzawi/react-auth/route": ["src/route/index.ts"] // @remap-prod-remove-line
     }
   },
   //"include": ["src", "./index.ts"],

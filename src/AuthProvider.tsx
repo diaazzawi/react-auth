@@ -3,7 +3,7 @@
 import {FC, ReactNode} from "react";
 
 import type {createStoreReturn} from "./createStore";
-import type Router from "./route";
+import type {Router} from "./types";
 
 import AuthKitContext from "./AuthContext";
 import Refresh from "./Refresh";

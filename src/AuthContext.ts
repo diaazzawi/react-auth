@@ -5,7 +5,7 @@ import {createContext, useContext} from "react";
 
 import type TokenObject from "./RxTokenObject";
 import {AuthError} from "./errors";
-import type Router from "./route";
+import type {Router} from "./types";
 
 interface ReactAuthKitContextConfig {
   fallbackPath?: string;
